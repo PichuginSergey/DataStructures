@@ -4,6 +4,17 @@
 namespace simpleSort {
 
 	template <typename T>
+	void bubbleSort(T data[], size_t size) {
+
+		if (size <= 1) return;
+
+		for (size_t out = 0; out < size - 1; ++out)
+			for (size_t in = 1; in < size - out; ++in)
+				if (data[in - 1] > data[in])
+					std::swap(data[in - 1], data[in]);
+	}
+
+	template <typename T>
 	void selectSort(T data[], size_t size) {
 
 		if (size <= 1) return;
