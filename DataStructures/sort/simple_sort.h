@@ -3,7 +3,21 @@
 
 namespace simpleSort {
 
-	template<typename T>
+	template <typename T>
+	void selectSort(T data[], size_t size) {
+
+		if (size <= 1) return;
+
+		for (size_t out = 0; out < size - 1; ++out) {
+			size_t min_idx = out;
+			for (size_t in = out + 1; in < size; ++in)
+				if (data[in] < data[min_idx])
+					min_idx = in;
+			std::swap(data[out], data[min_idx]);
+		}
+	}
+
+	template <typename T>
 	void insertSort(T data[], size_t size) {
 
 		if (size <= 1) return;

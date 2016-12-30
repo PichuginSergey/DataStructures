@@ -20,5 +20,20 @@ void test_simple_sort() {
 	std::cout << "After sort: ";
 	std::copy(std::begin(data), std::end(data), std::ostream_iterator<int>(std::cout, " "));
 	std::cout << std::endl;
+
+	/* ------------------------------------- */
+	for (auto& elm : data)
+		elm = rand() % 1000;
+	std::cout << "SelectSorting test\n";
+	std::cout << "Init array: ";
+	std::copy(std::begin(data), std::end(data), std::ostream_iterator<int>(std::cout, " "));
+	std::cout << "\n";
+
+	simpleSort::selectSort(&data[0], NMAX);
+
+	std::cout << "After sort: ";
+	std::copy(std::begin(data), std::end(data), std::ostream_iterator<int>(std::cout, " "));
+	std::cout << std::endl;
+
 }
 
