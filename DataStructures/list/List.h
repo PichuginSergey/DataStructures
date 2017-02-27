@@ -17,7 +17,6 @@ namespace DataStruct {
 		LinkedList(const LinkedList&);
 		LinkedList& operator=(const LinkedList&);
 		bool isEmpty() const;
-		size_t size() const;
 		void push_front(const value_type& data);
 		value_type pop_front();
 		void sortedInsert(const value_type& data);
@@ -81,7 +80,7 @@ namespace DataStruct {
 	
 		if (this == &list)
 			return *this;
-		LinkedList<LinkedList::value_type> tmpList(list);
+		LinkedList<value_type> tmpList(list);
 		this->swap(tmpList);
 		return *this;
 	}
